@@ -18,18 +18,18 @@ print(bin)
 
 Sum = sum(bin) / math.sqrt(128)
 print(Sum)
-#0.8838834764831843
+#0.5303300858899106
 P = math.erfc(Sum / math.sqrt(2))
 print(P)
-#0.37675911781158217>0.01
+#0.5958830905651779>0.01
 #task №2.2
 share=sum(bin)/128
 print(share)
-#0.078125
+#0.5234375
 print(2/math.sqrt(128))
 con = abs(share-0.5)<2/math.sqrt(128)
 print(con)
-#False
+#true
 if con==False:
     P=0;
 
@@ -40,17 +40,13 @@ else:
             V+=1
     P = math.erfc(abs(V - 2 * 128 * share * (1 - share)) / (2 * math.sqrt(2 * 128) * share * (1 - share)))
 print(P)
-#0
+#0.05436564357634485>0.01
 #task 2.3
-
-
-
-# Разбиваем массив на подмассивы из 8 элементов
 dividedList = []
 for i in range(0,16):
     dividedList.append(bin[0+8*i:8+8*i])
 
-# Ищем максимальную длину каждой подпоследовательности подряд идущих единиц:
+
 maxOnesLength = []
 for items in dividedList:
     count = 0
@@ -65,7 +61,6 @@ for items in dividedList:
     maxOnesLength.append(maxCount)
 print(maxOnesLength)
 #[3, 1, 5, 1, 1, 4, 5, 2, 2, 7, 3, 2, 2, 4, 2, 2]
-# Считаем статистику по разным длинам Vi:
 vList = []
 count = 0
 for i in maxOnesLength:
